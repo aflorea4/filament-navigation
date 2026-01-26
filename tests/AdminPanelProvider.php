@@ -1,10 +1,10 @@
 <?php
 
-namespace RyanChandler\FilamentNavigation\Tests;
+namespace Aflorea4\FilamentNavigation\Tests;
 
 use Filament\Panel;
 use Filament\PanelProvider;
-use RyanChandler\FilamentNavigation\FilamentNavigation;
+use Aflorea4\FilamentNavigation\FilamentNavigation;
 
 class AdminPanelProvider extends PanelProvider
 {

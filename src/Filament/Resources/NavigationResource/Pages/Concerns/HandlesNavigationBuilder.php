@@ -1,17 +1,17 @@
 <?php
 
-namespace RyanChandler\FilamentNavigation\Filament\Resources\NavigationResource\Pages\Concerns;
+namespace Aflorea4\FilamentNavigation\Filament\Resources\NavigationResource\Pages\Concerns;
 
 use Filament\Actions\Action;
-use Filament\Forms\ComponentContainer;
 use Filament\Forms\Components\Component;
-use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Get;
+use Filament\Schemas\Components\Group;
+use Filament\Schemas\Schema;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use RyanChandler\FilamentNavigation\FilamentNavigation;
+use Aflorea4\FilamentNavigation\FilamentNavigation;
 
 trait HandlesNavigationBuilder
 {
@@ -73,12 +73,12 @@ trait HandlesNavigationBuilder
     {
         return [
             Action::make('item')
-                ->mountUsing(function (ComponentContainer $form) {
+                ->mountUsing(function (Schema $schema) {
                     if (! $this->mountedItem) {
                         return;
                     }
 
-                    $form->fill($this->mountedItemData);
+                    $schema->fill($this->mountedItemData);
                 })
                 ->view('filament-navigation::hidden-action')
                 ->form([
@@ -106,7 +106,7 @@ trait HandlesNavigationBuilder
                                 ->getChildComponentContainer()
                                 ->fill();
                         })
-                        ->reactive(),
+                        ->live(),
                     Group::make()
                         ->statePath('data')
                         ->whenTruthy('type')
@@ -149,7 +149,7 @@ trait HandlesNavigationBuilder
 
                     $this->mountedActionData = [];
                 })
-                ->modalButton(__('filament-navigation::filament-navigation.items-modal.btn'))
+                ->modalSubmitActionLabel(__('filament-navigation::filament-navigation.items-modal.btn'))
                 ->label(__('filament-navigation::filament-navigation.items-modal.title')),
         ];
     }

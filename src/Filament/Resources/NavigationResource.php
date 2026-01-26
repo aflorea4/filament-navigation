@@ -1,15 +1,15 @@
 <?php
 
-namespace RyanChandler\FilamentNavigation\Filament\Resources;
+namespace Aflorea4\FilamentNavigation\Filament\Resources;
 
-use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\View;
 use Filament\Forms\Components\ViewField;
-use Filament\Forms\Form;
 use Filament\Forms\Set;
+use Filament\Schemas\Components\Group;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\View;
+use Filament\Schemas\Schema;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\EditAction;
@@ -17,12 +17,12 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
-use RyanChandler\FilamentNavigation\FilamentNavigation;
-use RyanChandler\FilamentNavigation\Models\Navigation;
+use Aflorea4\FilamentNavigation\FilamentNavigation;
+use Aflorea4\FilamentNavigation\Models\Navigation;
 
 class NavigationResource extends Resource
 {
-    protected static ?string $navigationIcon = 'heroicon-o-bars-3';
+    protected static \BackedEnum | string | null $navigationIcon = 'heroicon-o-bars-3';
 
     protected static bool $showTimestamps = true;
 
@@ -37,15 +37,14 @@ class NavigationResource extends Resource
         static::$showTimestamps = ! $condition;
     }
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 Section::make('')->schema([
                     TextInput::make('name')
                         ->label(__('filament-navigation::filament-navigation.attributes.name'))
-                        ->reactive()
-                        ->debounce()
+                        ->live(onBlur: true)
                         ->afterStateUpdated(function (?string $state, Set $set, string $context) {
                             if (! $state) {
                                 return;

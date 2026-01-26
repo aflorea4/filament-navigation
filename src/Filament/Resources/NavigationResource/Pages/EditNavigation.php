@@ -1,10 +1,10 @@
 <?php
 
-namespace RyanChandler\FilamentNavigation\Filament\Resources\NavigationResource\Pages;
+namespace Aflorea4\FilamentNavigation\Filament\Resources\NavigationResource\Pages;
 
 use Filament\Resources\Pages\EditRecord;
-use RyanChandler\FilamentNavigation\Filament\Resources\NavigationResource\Pages\Concerns\HandlesNavigationBuilder;
-use RyanChandler\FilamentNavigation\FilamentNavigation;
+use Aflorea4\FilamentNavigation\Filament\Resources\NavigationResource\Pages\Concerns\HandlesNavigationBuilder;
+use Aflorea4\FilamentNavigation\FilamentNavigation;
 
 class EditNavigation extends EditRecord
 {

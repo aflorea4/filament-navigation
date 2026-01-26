@@ -1,50 +1,54 @@
 {
-    "name": "ryangjchandler/filament-navigation",
+    "name": "aflorea4/filament-navigation",
     "description": "Build structured navigation menus in Filament.",
     "keywords": [
-        "ryangjchandler",
+        "aflorea4",
         "laravel",
         "filament-navigation"
     ],
-    "homepage": "https://github.com/ryangjchandler/filament-navigation",
+    "homepage": "https://github.com/aflorea4/filament-navigation",
     "license": "MIT",
     "authors": [
         {
+            "name": "Alexandru Florea",
+            "email": "alex@aflorea.dev",
+            "role": "Developer"
+        },
+        {
             "name": "Ryan Chandler",
             "email": "support@ryangjchandler.co.uk",
-            "role": "Developer"
+            "role": "Original Author"
         }
     ],
     "require": {
-        "php": "^8.1",
-        "doctrine/dbal": "^3.5.1",
-        "illuminate/contracts": "^10.0|^11.0",
-        "filament/filament": "^3.0",
-        "spatie/laravel-package-tools": "^1.9.2"
+        "php": "^8.2",
+        "illuminate/contracts": "^11.0|^12.0",
+        "filament/filament": "^4.0",
+        "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8",
-        "nunomaduro/collision": "^7.0|^8.0",
-        "nunomaduro/larastan": "^2.0.1",
-        "orchestra/canvas": "^8.0",
-        "orchestra/testbench": "^8.0|^9.0",
-        "pestphp/pest": "^2.0",
-        "pestphp/pest-plugin-laravel": "^2.0",
+        "nunomaduro/collision": "^8.0",
+        "nunomaduro/larastan": "^2.9",
+        "orchestra/canvas": "^9.0",
+        "orchestra/testbench": "^9.0|^10.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
-        "phpunit/phpunit": "^9.5|^10.0",
-        "spatie/laravel-ray": "^1.26"
+        "phpunit/phpunit": "^11.0",
+        "spatie/laravel-ray": "^1.36"
     },
     "autoload": {
         "psr-4": {
-            "RyanChandler\\FilamentNavigation\\": "src",
-            "RyanChandler\\FilamentNavigation\\Database\\Factories\\": "database/factories"
+            "Aflorea4\\FilamentNavigation\\": "src",
+            "Aflorea4\\FilamentNavigation\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "RyanChandler\\FilamentNavigation\\Tests\\": "tests"
+            "Aflorea4\\FilamentNavigation\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -63,7 +67,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "RyanChandler\\FilamentNavigation\\FilamentNavigationServiceProvider"
+                "Aflorea4\\FilamentNavigation\\FilamentNavigationServiceProvider"
             ]
         }
     },

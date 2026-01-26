@@ -1,8 +1,8 @@
 <?php
-// config for RyanChandler/FilamentNavigation
+// config for Aflorea4/FilamentNavigation
 return [
 
-    'navigation_model' => \RyanChandler\FilamentNavigation\Models\Navigation::class,
+    'navigation_model' => \Aflorea4\FilamentNavigation\Models\Navigation::class,
 
-    'navigation_resource' => \RyanChandler\FilamentNavigation\Filament\Resources\NavigationResource::class,
+    'navigation_resource' => \Aflorea4\FilamentNavigation\Filament\Resources\NavigationResource::class,
 ];

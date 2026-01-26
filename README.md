@@ -1,16 +1,19 @@
 # Build structured navigation menus in Filament.
 
-> [!WARNING]
-> This package is no longer maintained. Please feel free to fork the package and update accordingly and re-release.
-
 This plugin for Filament provides a `Navigation` resource that lets you build structural navigation menus with a clean drag-and-drop UI.
+
+## Requirements
+
+- PHP 8.2 or higher
+- Laravel 11.0 or 12.0
+- Filament 4.0
 
 ## Installation
 
 Begin by installing this package via Composer:
 
 ```sh
-composer require ryangjchandler/filament-navigation
+composer require aflorea4/filament-navigation
 ```
 
 Run migrations.
@@ -30,7 +33,7 @@ php artisan filament:assets
 You first need to register the plugin with Filament. This can be done inside of your `PanelProvider`, e.g. `AdminPanelProvider`.
 
 ```php
-use RyanChandler\FilamentNavigation\FilamentNavigation;
+use Aflorea4\FilamentNavigation\FilamentNavigation;
 
 return $panel
     ->plugin(FilamentNavigation::make());
@@ -80,10 +83,10 @@ The recursive structure makes it really simple to render nested menus / dropdown
 
 ### Retrieving a navigation object
 
-To retrieve a navigation object, provide the handle to the `RyanChandler\FilamentNavigation\Models\Navigation::fromHandle()` method.
+To retrieve a navigation object, provide the handle to the `Aflorea4\FilamentNavigation\Models\Navigation::fromHandle()` method.
 
 ```php
-use RyanChandler\FilamentNavigation\Models\Navigation;
+use Aflorea4\FilamentNavigation\Models\Navigation;
 
 $menu = Navigation::fromHandle('main-menu');
 ```
@@ -130,7 +133,7 @@ return $panel
 This plugin also provides a custom Filament field that can be used to search and select a navigation menu inside other forms and resources.
 
 ```php
-use RyanChandler\FilamentNavigation\Filament\Fields\NavigationSelect;
+use Aflorea4\FilamentNavigation\Filament\Fields\NavigationSelect;
 
 ->schema([
     NavigationSelect::make('navigation_id'),
@@ -177,7 +180,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Ryan Chandler](https://github.com/ryangjchandler)
+- [Alexandru Florea](https://github.com/aflorea4) - Current Maintainer
+- [Ryan Chandler](https://github.com/ryangjchandler) - Original Author
 - [All Contributors](../../contributors)
 
 ## License

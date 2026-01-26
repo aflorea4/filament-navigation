@@ -2,6 +2,38 @@
 
 All notable changes to `filament-navigation` will be documented in this file.
 
+## v2.0.0 - 2026-01-26
+
+This release marks a major upgrade adding support for Filament v4.x.
+
+**New Maintainer:** This package is now maintained by Alexandru Florea ([@aflorea4](https://github.com/aflorea4)). Thanks to Ryan Chandler for the original work!
+
+### What's Changed
+
+#### Breaking Changes
+
+- **Package namespace**: Changed from `ryangjchandler/filament-navigation` to `aflorea4/filament-navigation`
+- **PHP namespace**: Changed from `RyanChandler\FilamentNavigation` to `Aflorea4\FilamentNavigation`
+- **Minimum PHP version**: Now requires PHP 8.2+
+- **Minimum Laravel version**: Now requires Laravel 11.0+
+- **Minimum Filament version**: Now requires Filament 4.0+
+- Removed `doctrine/dbal` dependency (no longer required)
+
+#### Internal Updates
+
+- Updated to Filament v4 Schema API: `form()` now uses `Schema` instead of `Form`
+- Updated Forms API: replaced deprecated `reactive()` with `live()`
+- Updated Actions API: replaced deprecated `modalButton()` with `modalSubmitActionLabel()`
+- Updated component imports: layout components now use `Filament\Schemas\Components`
+- Form field components still use `Filament\Forms\Components`
+- Updated all dependencies to support Filament v4
+
+#### Migration
+
+To upgrade from v1.x, please consult the [`UPGRADE`](UPGRADE.md) guide.
+
+**Full Changelog**: https://github.com/aflorea4/filament-navigation/compare/v1.0.0-beta6...v2.0.0
+
 ## v1.0.0-beta6 - 2025-02-24
 
 ### What's Changed

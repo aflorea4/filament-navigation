@@ -1,6 +1,6 @@
 <?php
 
-namespace RyanChandler\FilamentNavigation\Database\Factories;
+namespace Aflorea4\FilamentNavigation\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
