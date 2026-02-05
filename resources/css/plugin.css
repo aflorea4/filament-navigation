@@ -1,7 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*
+ * Tailwind CSS v4 - Scoped for Filament Navigation
+ * Note: Base layer is included but should not conflict with Filament v4 since both use Tailwind v4
+ * All utilities are scoped with .filament-navigation prefix via tailwind.config.js
+ */
+@import "tailwindcss";
 
-.sortable-container-maybe-active {
+@config "../../tailwind.config.js";
 
+@theme {
+  /* Inherit Filament's theme - minimal custom configuration */
 }
