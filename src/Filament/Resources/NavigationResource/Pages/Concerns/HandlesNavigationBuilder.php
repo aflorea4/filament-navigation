@@ -3,7 +3,6 @@
 namespace Aflorea4\FilamentNavigation\Filament\Resources\NavigationResource\Pages\Concerns;
 
 use Filament\Actions\Action;
-use Filament\Forms\Components\Component;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Get;
@@ -117,8 +116,8 @@ trait HandlesNavigationBuilder
                         }),
                     Group::make()
                         ->statePath('data')
-                        ->visible(fn (Component $component) => $component->evaluate(FilamentNavigation::get()->getExtraFields()) !== [])
-                        ->schema(function (Component $component) {
+                        ->visible(fn ($component) => $component->evaluate(FilamentNavigation::get()->getExtraFields()) !== [])
+                        ->schema(function ($component) {
                             return FilamentNavigation::get()->getExtraFields();
                         }),
                 ])
