@@ -5,7 +5,6 @@ namespace Aflorea4\FilamentNavigation\Filament\Resources\NavigationResource\Page
 use Filament\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Get;
 use Filament\Schemas\Components\Group;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Arr;
@@ -109,7 +108,7 @@ trait HandlesNavigationBuilder
                     Group::make()
                         ->statePath('data')
                         ->whenTruthy('type')
-                        ->schema(function (Get $get) {
+                        ->schema(function ($get) {
                             $type = $get('type');
 
                             return FilamentNavigation::get()->getItemTypes()[$type]['fields'] ?? [];

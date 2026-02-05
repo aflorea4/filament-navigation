@@ -7,7 +7,6 @@ use Filament\Actions\EditAction;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\ViewField;
-use Filament\Forms\Set;
 use Filament\Schemas\Components\Group;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\View;
@@ -45,7 +44,7 @@ class NavigationResource extends Resource
                     TextInput::make('name')
                         ->label(__('filament-navigation::filament-navigation.attributes.name'))
                         ->live(onBlur: true)
-                        ->afterStateUpdated(function (?string $state, Set $set, string $context) {
+                        ->afterStateUpdated(function (?string $state, $set, string $context) {
                             if (! $state) {
                                 return;
                             }
