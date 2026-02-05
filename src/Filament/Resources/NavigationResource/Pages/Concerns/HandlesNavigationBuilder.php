@@ -102,7 +102,7 @@ trait HandlesNavigationBuilder
                             //       would normally let you do.
                             $component
                                 ->getContainer()
-                                ->getComponent(fn (Component $component) => $component instanceof Group)
+                                ->getComponent(fn ($component) => $component instanceof Group)
                                 ->getChildComponentContainer()
                                 ->fill();
                         })
