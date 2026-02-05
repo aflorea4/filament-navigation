@@ -1,12 +1,6 @@
-<x-filament-forms::field-wrapper
-    :id="$getId()"
-    :label="$getLabel()"
-    :label-sr-only="$isLabelHidden()"
-    :helper-text="$getHelperText()"
-    :hint="$getHint()"
-    :hint-icon="$getHintIcon()"
-    :required="$isRequired()"
-    :state-path="$getStatePath()"
+<x-dynamic-component
+    :component="$getFieldWrapperView()"
+    :field="$field"
     class="filament-navigation"
 >
     <div wire:key="navigation-items-wrapper">
@@ -35,4 +29,4 @@
             {{__('filament-navigation::filament-navigation.items.add-item')}}
         </x-filament::button>
     </div>
-</x-filament-forms::field-wrapper>
+</x-dynamic-component>
