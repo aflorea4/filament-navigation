@@ -4,9 +4,9 @@ namespace Aflorea4\FilamentNavigation\Filament\Resources;
 
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\ViewField;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Group;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\View;
@@ -71,14 +71,14 @@ class NavigationResource extends Resource
                             ->unique(column: 'handle', ignoreRecord: true),
                         View::make('filament-navigation::card-divider')
                             ->visible(static::$showTimestamps),
-                        Placeholder::make('created_at')
+                        TextEntry::make('created_at')
                             ->label(__('filament-navigation::filament-navigation.attributes.created_at'))
                             ->visible(static::$showTimestamps)
-                            ->content(fn (?Navigation $record) => $record ? $record->created_at->translatedFormat('d/m/Y H:i:s') : new HtmlString('&mdash;')),
-                        Placeholder::make('updated_at')
+                            ->state(fn (?Navigation $record) => $record ? $record->created_at->translatedFormat('d/m/Y H:i:s') : new HtmlString('&mdash;')),
+                        TextEntry::make('updated_at')
                             ->label(__('filament-navigation::filament-navigation.attributes.updated_at'))
                             ->visible(static::$showTimestamps)
-                            ->content(fn (?Navigation $record) => $record ? $record->updated_at->translatedFormat('d/m/Y H:i:s') : new HtmlString('&mdash;')),
+                            ->state(fn (?Navigation $record) => $record ? $record->updated_at->translatedFormat('d/m/Y H:i:s') : new HtmlString('&mdash;')),
                     ]),
                 ])
                     ->columnSpan([
@@ -138,7 +138,7 @@ class NavigationResource extends Resource
                     ->dateTime()
                     ->sortable(),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make()
                     ->icon(null),
                 DeleteAction::make()
